@@ -18,10 +18,8 @@ class BinaryTreeNode:
 
 def reverse_binary_tree(node: BinaryTreeNode):
     node.right, node.left = node.left, node.right
-    if node.left:
-        reverse_binary_tree(node.left)
-    if node.right:
-        reverse_binary_tree(node.right)
+    node.left and reverse_binary_tree(node.left)
+    node.right and reverse_binary_tree(node.right)
 
 
 def is_super_balanced(node: BinaryTreeNode):
