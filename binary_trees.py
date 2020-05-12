@@ -28,8 +28,8 @@ def is_super_balanced(node: BinaryTreeNode):
 
     return all([
         fabs(left_depth - right_depth) <= 1,
-        True if not node.left else is_super_balanced(node.left),
-        True if not node.right else is_super_balanced(node.right)
+        not node.left or is_super_balanced(node.left),
+        not node.right or is_super_balanced(node.right)
     ])
 
 
